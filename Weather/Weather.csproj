@@ -1,0 +1,105 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net6.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <UseWPF>true</UseWPF>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Icons_Weather\icons8_partly_cloudy_day_40px.png" />
+    <None Remove="Icons_Weather\icons8_rain_40px.png" />
+    <None Remove="Icons_Weather\icons8_snow_40px.png" />
+    <None Remove="Icons_Weather\icons8_storm_40px.png" />
+    <None Remove="Icons_Weather\icons8_sun_40px.png" />
+    <None Remove="Icons_Weather\icons8_windy_weather_40px.png" />
+    <None Remove="Image\6422377_preview.png" />
+    <None Remove="Image\7743102_1726.jpg" />
+    <None Remove="Image\beautiful-dusk-light-colorful-beauty_1203-5706.jpg" />
+    <None Remove="Image\bk1.png" />
+    <None Remove="Image\bk2.jpg" />
+    <None Remove="Image\bk3.jpg" />
+    <None Remove="Image\bk3_1.jpg" />
+    <None Remove="Image\bk4.jpg" />
+    <None Remove="Image\bk5.jpg" />
+    <None Remove="Image\bk6.jpg" />
+    <None Remove="Image\bk7.jpg" />
+    <None Remove="Image\bk8.jpg" />
+    <None Remove="Image\bk9.jpg" />
+    <None Remove="Image\icons8_baby_calendar_32px.png" />
+    <None Remove="Image\icons8_moon_symbol_32px.png" />
+    <None Remove="Image\icons8_search_24px_1.png" />
+    <None Remove="Image\icons8_sun_32px.png" />
+    <None Remove="Image\icons8_synchronize_30px.png" />
+    <None Remove="Image\icons8_synchronize_30px_1.png" />
+    <None Remove="Image\icons8_weather_24px_1.png" />
+    <None Remove="Image\icons8_weather_30px.png" />
+    <None Remove="Image\istockphoto-844503712-170667a.jpg" />
+    <None Remove="Image\night.jpg" />
+    <None Remove="Image\pngtree-cartoon-sunset-over-dusk-riverside-banner-background-paintedsunset-backgrounddusk-backgroundbanner-image_53280.jpg" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Image\bk6.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="MahApps.Metro" Version="2.4.9" />
+    <PackageReference Include="MahApps.Metro.Resources" Version="0.6.1" />
+    <PackageReference Include="MaterialDesignThemes" Version="4.5.0" />
+    <PackageReference Include="ShowMeTheXAML.MSBuild" Version="2.0.0" />
+    <PackageReference Include="System.Drawing.Common" Version="6.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Icons_Weather\icons8_partly_cloudy_day_40px.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Icons_Weather\icons8_rain_40px.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Icons_Weather\icons8_snow_40px.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Icons_Weather\icons8_storm_40px.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Icons_Weather\icons8_sun_40px.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Icons_Weather\icons8_windy_weather_40px.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Image\bk7.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Image\bk8.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Image\icons8_baby_calendar_32px.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Image\icons8_moon_symbol_32px.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Image\icons8_search_24px_1.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Image\icons8_sun_32px.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Image\icons8_synchronize_30px.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Image\icons8_synchronize_30px_1.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Image\icons8_weather_30px.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+  </ItemGroup>
+
+</Project>

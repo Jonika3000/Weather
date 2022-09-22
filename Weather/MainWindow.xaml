@@ -1,0 +1,240 @@
+﻿<Window x:Class="Weather.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:mah="http://metro.mahapps.com/winfx/xaml/controls"
+        xmlns:local="clr-namespace:Weather"
+        mc:Ignorable="d"
+        Title="Weather" Height="800" Width="1210"
+      WindowStartupLocation="CenterScreen" Closing="MetroWindow_Closing"
+        WindowStyle="None" AllowsTransparency="True"
+        ResizeMode="CanResizeWithGrip">
+    <Window.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="ButtonStyle.xaml" />
+                <ResourceDictionary Source="TextBlockStyles.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Window.Resources>
+    <Window.Background>
+        <ImageBrush ImageSource="/Image/bk8.jpg"
+                    x:Name="BackgroundImg"
+                    Stretch="UniformToFill"/>
+    </Window.Background>
+     
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="20"/>
+            <RowDefinition Height="45"/>
+            <RowDefinition Height="250"/>
+            <RowDefinition Height="200"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="0" Background="#38312C" MouseDown="Grid_MouseDown"  
+              >
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="150"/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <StackPanel Orientation="Horizontal"
+                        Grid.Column="0"
+                        Margin="2">
+                <Image Source="Image/icons8_weather_30px.png"/>
+                <TextBlock Text="| Погода"
+                            FontWeight="Bold"
+                           Foreground="White"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" 
+                        HorizontalAlignment="Right"
+                        VerticalAlignment="Top"
+                        Grid.Column="1">
+                <Button Content="–"
+                         Width="25"
+                        Style="{DynamicResource ButtonWindow}"
+                        FontSize="15"
+                        Foreground="Gray"
+                        Click="Button_Clicl_Minimize"
+                        />
+                <Button Content="☐"
+                         Width="25"
+                        Style="{DynamicResource ButtonWindow}"
+                        FontSize="15"
+                         Foreground="Gray"
+                        Click="Button_Click_Max"
+                         />
+                <Button Content="X"
+                        Width="25"
+                        Style="{DynamicResource ButtonWindow}"
+                        FontSize="15"
+                        Foreground="Gray"  
+                        Click="Button_Click_Stop"
+                        VerticalAlignment="Top"/>
+            </StackPanel>
+        </Grid>
+        <Grid Grid.Row="1"
+              Background="Transparent"
+              x:Name="MenuGrid">
+            <TextBlock Foreground="#38312C"
+                       Text="Прогноз погоди"
+                       VerticalAlignment="Center"
+                       HorizontalAlignment="Left"
+                       FontSize="23"
+                       FontWeight="Bold"
+                       Margin="10"/>
+            <StackPanel Orientation="Horizontal"
+                        HorizontalAlignment="Right"
+                        VerticalAlignment="Center">
+                <Button   
+                        Click="UpdateButtonClick"
+                          Style="{DynamicResource ButtonWindow}">
+                    <StackPanel>
+                        <Image Source="/Image/icons8_synchronize_30px_1.png"/>
+                    </StackPanel>
+                </Button>
+                <Button Background="Transparent"
+                       BorderThickness="0" >
+                    <!--<StackPanel>
+                        <mah:DateTimePicker Height="25"
+                                Width="110"
+                                 />
+                        --><!--<Image Source="/Image/icons8_baby_calendar_32px.png"/>--><!--
+                    </StackPanel>-->
+                </Button>
+                
+                <Grid Visibility="Visible"
+                          Margin="5,0" x:Name="GridSearch">
+                    <TextBox  Width="222"
+                              Background="Transparent" 
+                              x:Name="SearchTermTextBox" 
+                              BorderBrush="#38312C"
+                              BorderThickness="2"
+                              Cursor="IBeam"
+                              FontSize="18"
+                              Foreground="White" KeyDown="TextBox_KeyDown">
+                        <TextBox.Resources>
+                            <Style TargetType="Border">
+                                <Setter Property="CornerRadius" Value="10"/>
+                            </Style>
+                        </TextBox.Resources>
+                    </TextBox>
+                   
+                    <TextBlock IsHitTestVisible="False" 
+                                   Text="Шукати місто" 
+                                   VerticalAlignment="Center" HorizontalAlignment="Left" Margin="10,0,0,0"
+                                   Foreground="#38312C"
+                                   FontSize="15">
+                        <TextBlock.Style>
+                            <Style TargetType="{x:Type TextBlock}">
+                                <Setter Property="Visibility" Value="Collapsed"/>
+                                <Style.Triggers>
+                                    <DataTrigger Binding="{Binding Text, ElementName=SearchTermTextBox}" Value="">
+                                        <Setter Property="Visibility" Value="Visible"/>
+                                    </DataTrigger>
+                                </Style.Triggers>
+                            </Style>
+                        </TextBlock.Style>
+                        
+                    </TextBlock>
+                </Grid>
+
+
+            </StackPanel>
+            
+        </Grid>
+        <Grid Grid.Row="2"  >
+            
+            <StackPanel Orientation="Vertical"
+                        HorizontalAlignment="Center"
+                        VerticalAlignment="Center"
+                        Margin="15">
+                <Border Background="Teal" CornerRadius="35">
+                    <StackPanel Orientation="Vertical">
+                        <TextBlock Foreground="White"
+                           FontSize="70"
+                           Text="Town"
+                               Margin="10"
+                           FontWeight="Bold"
+                           x:Name="Town"
+                            HorizontalAlignment="Center"
+                         >
+                        </TextBlock>
+                    </StackPanel>
+                </Border>
+                 
+           
+                 
+                
+                <!--<TextBlock Foreground="Black"
+                           FontSize="80"
+                           Text="45"
+                           FontWeight="Regular"
+                           x:Name="Temp"
+                           HorizontalAlignment="Center"/>
+                <TextBlock Foreground="Black"
+                           FontSize="40"
+                           Text="Mostly Cloudy"
+                           FontWeight="Bold"
+                           x:Name="Sky"
+                            HorizontalAlignment="Center"/>-->
+            </StackPanel>
+        </Grid>
+        <Grid Grid.Row="3">
+            <StackPanel Orientation="Horizontal"
+                        Margin="10"
+                        VerticalAlignment="Top"
+                        x:Name="StackPanelDays">
+                <!--<Button  
+                        Margin="10"
+                        Width="150"
+                        Height="150"
+                        Cursor="Hand"
+                         Background="Transparent"
+                    BorderThickness="0">
+
+                    <StackPanel Background="Transparent"
+                            Orientation="Vertical"
+                           
+                            >
+                        <TextBlock Text="09 Web"
+                                   FontSize="20"
+                                   FontWeight="Regular"
+                                   HorizontalAlignment="Center"
+                                       Foreground="White"
+                                       x:Name="TextBlockDate5"
+                                   Height="25"
+                                   />
+                        <Image Source="/Icons_Weather/icons8_rain_40px.png"
+                               Height="50"
+                               Width="50"
+                               HorizontalAlignment="Center"
+                                   x:Name="Image5"/>
+                        <TextBlock Text="55"
+                                   Foreground="White"
+                                   FontSize="20"
+                                   FontWeight="Regular"
+                                   HorizontalAlignment="Center"
+                                       x:Name="TextBlockTemp5"/>
+                        <TextBlock Text="Rain"
+                                   FontSize="20"
+                                   FontWeight="Regular"
+                                   HorizontalAlignment="Center"
+                                       Foreground="White"
+                                       x:Name="TextBlockStatus5"/>
+                    </StackPanel>
+                </Button>-->
+
+            </StackPanel>
+            
+        </Grid>
+        <Grid Grid.Row="4">
+            
+            <Frame  
+                       Name="Container"
+                       Margin="20"
+                       NavigationUIVisibility="Hidden">
+            </Frame>
+        </Grid>
+    </Grid>
+</Window>
