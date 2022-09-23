@@ -34,6 +34,7 @@
     <None Remove="Image\icons8_synchronize_30px.png" />
     <None Remove="Image\icons8_synchronize_30px_1.png" />
     <None Remove="Image\icons8_weather_24px_1.png" />
+    <None Remove="Image\icons8_weather_30px.ico" />
     <None Remove="Image\icons8_weather_30px.png" />
     <None Remove="Image\istockphoto-844503712-170667a.jpg" />
     <None Remove="Image\night.jpg" />
@@ -95,6 +96,9 @@
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </Resource>
     <Resource Include="Image\icons8_synchronize_30px_1.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Image\icons8_weather_30px.ico">
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </Resource>
     <Resource Include="Image\icons8_weather_30px.png">

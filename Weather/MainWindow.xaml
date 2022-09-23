@@ -9,7 +9,7 @@
         Title="Weather" Height="800" Width="1210"
       WindowStartupLocation="CenterScreen" Closing="MetroWindow_Closing"
         WindowStyle="None" AllowsTransparency="True"
-        ResizeMode="CanResizeWithGrip">
+        ResizeMode="CanResizeWithGrip" Icon="/Image/icons8_weather_30px.ico">
     <Window.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>

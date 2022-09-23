@@ -79,7 +79,7 @@ namespace Weather
             {
                 myBrush.ImageSource =
                     new BitmapImage(new Uri("pack://application:,,,/Image/bk8.jpg", UriKind.Absolute));
-           
+                
             }
             else if (DateTime.Now.Hour >= 13 && DateTime.Now.Hour <= 19)
             {
@@ -93,6 +93,7 @@ namespace Weather
                     new BitmapImage(new Uri("pack://application:,,,/Image/bk7.jpg", UriKind.Absolute));
           
             }
+            myBrush.Stretch = Stretch.UniformToFill;
             this.Background = myBrush;
         }
   
